@@ -1,0 +1,30 @@
+﻿@model IList<DemoMvcWebApi.Models.Speaker>
+
+<h1>Liste des speakers</h1>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Société</th>
+            <th>Fonction</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var speaker in Model)
+        {
+            <tr>
+                <td>@speaker.Id</td>
+                <td>@speaker.FirstName</td>
+                <td>@speaker.LastName</td>
+                <td>@speaker.Company</td>
+                <td>@speaker.Job</td>
+                <td>@Html.ActionLink("Details", "Details", new { id = speaker.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>
