@@ -1,0 +1,45 @@
+﻿@model DemoTagHelpers.Models.Customer
+@addTagHelper "*, DemoTagHelpers"
+@{
+    ViewData["Title"] = "Fiche client";
+}
+<h1>Fiche client</h1>
+<hr />
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        <input type="text" name="@Html.NameFor(m => m.Title)" value="@Model.Title" asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        <input type="text" name="@Html.NameFor(m => m.FirstName)" value="@Model.FirstName"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        <input type="text" name="@Html.NameFor(m => m.LastName)" value="@Model.LastName"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AddressLine1)
+        <input type="text" name="@Html.NameFor(m => m.AddressLine1)" value="@Model.AddressLine1"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AddressLine2)
+        <input type="text" name="@Html.NameFor(m => m.AddressLine2)" value="@Model.AddressLine2"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ZipCode)
+        <input type="text" name="@Html.NameFor(m => m.ZipCode)" value="@Model.ZipCode"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.City)
+        <input type="text" name="@Html.NameFor(m => m.City)" value="@Model.City"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Country)
+        <input type="text" name="@Html.NameFor(m => m.Country)" value="@Model.Country"  asp-readonly="@Model.IsReadonly" class="form-control" />
+    </div>
+    @if (!Model.IsReadonly)
+    {
+        <button type="submit" class="btn btn-default">Enregistrer</button>
+    }
+</form>

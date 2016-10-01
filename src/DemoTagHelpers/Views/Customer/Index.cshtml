@@ -1,0 +1,109 @@
+﻿@model DemoTagHelpers.Models.Customer
+@{
+    ViewData["Title"] = "Fiche client";
+}
+
+<h1>Fiche client</h1>
+<hr />
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.Title)" value="@Model.Title" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.Title)" value="@Model.Title" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.FirstName)" value="@Model.FirstName" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.FirstName)" value="@Model.FirstName" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.LastName)" value="@Model.LastName" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.LastName)" value="@Model.LastName" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AddressLine1)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.AddressLine1)" value="@Model.AddressLine1" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.AddressLine1)" value="@Model.AddressLine1" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.AddressLine2)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.AddressLine2)" value="@Model.AddressLine2" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.AddressLine2)" value="@Model.AddressLine2" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ZipCode)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.ZipCode)" value="@Model.ZipCode" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.ZipCode)" value="@Model.ZipCode" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.City)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.City)" value="@Model.City" readonly="readonly" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.City)" value="@Model.City" class="form-control" />
+        }
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Country)
+        @if (Model.IsReadonly)
+        {
+            <input type="text" name="@Html.NameFor(m => m.Country)" readonly="readonly" value="@Model.Country" class="form-control" />
+        }
+        else
+        {
+
+            <input type="text" name="@Html.NameFor(m => m.Country)" value="@Model.Country" class="form-control" />
+        }
+    </div>
+    @if (!Model.IsReadonly)
+    {
+        <button type="submit" class="btn btn-default">Enregistrer</button>
+    }
+</form>
